@@ -27,13 +27,53 @@ class Chat extends Component {
     }, 1000);
   }
 
+  addNewMessage = (messages) => {
+    this.setState(
+      {
+        messages,
+      },
+      () => {
+        this.autoReply();
+      }
+    );
+  };
+
+  autoReply = () => {
+    const message = this.state.messages[this.state.messages.length - 1];
+
+    if (message.role === 'ROBOT') return;
+    const autoMessage = [];
+
+    answersData.forEach((element) => {
+      element.tags.forEach((tag) => {
+        if (message.text.includes(tag)) {
+          if (autoMessage.length === 0) {
+            autoMessage.push(element);
+          }
+          if (autoMessage.length > 0 && autoMessage[autoMessage.length - 1] !== element) {
+            autoMessage.push(element);
+          }
+        }
+      });
+    });
+
+    if (autoMessage.length === 0) return;
+    const messages = this.state.messages.concat(autoMessage);
+
+    setTimeout(() => {
+      this.setState({
+        messages,
+      });
+    }, 1000);
+  };
+
   render() {
     const { shop, messages } = this.state;
     return (
       <main className="Chat">
         <ChatHeader shop={shop} />
-        <ChatBox messages={messages} />
-        <ChatInput />
+        <ChatBox messages={messages} addNewMessage={this.addNewMessage} />
+        <ChatInput messages={messages} addNewMessage={this.addNewMessage} />
       </main>
     );
   }
