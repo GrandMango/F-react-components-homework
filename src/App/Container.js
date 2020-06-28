@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
+import shop1 from '../data/shop.json';
 
 class Container extends Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
-      shop: this.props.shop,
+      shop1,
     };
   }
 
   render() {
-    const {shop} = this.state;
+    const shop = this.state.shop1;
 
     return (
       <div className="ChatBox WelcomeBox">
