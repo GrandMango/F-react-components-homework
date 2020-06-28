@@ -4,3 +4,56 @@
   align-items: center;
   height: 100%;
 }
+
+.WelcomeContainer {
+  text-align: center;
+
+  img {
+    width: 100px;
+    height: 100px;
+    border-radius:50%; 
+    overflow:hidden;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+}
+
+.WelcomeBox {
+  justify-content: center;
+}
+
+
+.Nav {
+  width: 100vh;
+  
+  display: flex;
+  justify-content: space-between;
+  a {
+    display: block;
+    width: auto;
+    padding: 20px;
+    color: black;
+    font-size: 15px;
+    text-decoration: none;
+    
+    &:nth-child(2) {
+      border-left: solid 1px;
+      border-right: solid 1px;
+      border-color: #ced6e0;
+    }
+  }
+
+
+}
+
+.Footer {
+  padding: 0px;
+  background-color: #dfe4ea;
+  border-bottom-left-radius: 28px;
+  border-bottom-right-radius: 28px;
+  display: flex;
+  justify-content: space-between;
+
+}
