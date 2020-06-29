@@ -12,7 +12,7 @@ class NotFound extends Component {
 
         <div className="ChatBox WelcomeBox">
           <div className="WelcomeContainer">
-            <h1>Coming Soon...</h1>
+            <h1 className="ComingSoon">Coming Soon...</h1>
             <Link to="/">Back to Home</Link>
           </div>
         </div>
