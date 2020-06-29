@@ -3,6 +3,7 @@ import './App.scss';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import WelcomePage from './WelcomePage';
 import Chat from '../Chat/Chat';
+import NotFound from './NotFound';
 
 class App extends Component {
   render() {
@@ -12,6 +13,10 @@ class App extends Component {
           <Switch>
             <Route excat path="/clientService">
               <Chat />
+            </Route>
+
+            <Route excat path="/NotFound">
+              <NotFound />
             </Route>
 
             <Route excat path="/">

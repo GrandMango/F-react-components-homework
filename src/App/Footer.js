@@ -9,9 +9,9 @@ class Footer extends Component {
         <nav className="Nav">
           <Link to="/clientService">客服</Link>
 
-          <Link to="/hello">618活动</Link>
+          <Link to="/NotFound">6.18活动</Link>
 
-          <Link to="/hello">关于我们</Link>
+          <Link to="/NotFound">关于我们</Link>
         </nav>
       </footer>
     );
